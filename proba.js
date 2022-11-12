@@ -1,12 +1,16 @@
 function testCycle(a, b) {
 	var x;
-	x = ''
-while (a <= b) {
+	x = '';
+if(a<b) {
+	while (a<=b) {
 x += a + ' ';
 a++;
+}} else {
+	while (b<=a) {
+	x += b +' ';
+	b++;
+	}}
+return console.log(x);
 }
 
-return console.log(x);
-	
-}
-testCycle(6,24)
+testCycle(6,6)
