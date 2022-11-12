@@ -1,13 +1,12 @@
-function testCycle(k, n) {
+function testCycle(a, b) {
 	var x;
-	let y = 0;
 	x = ''
-while (y < k) {
-x += n + ' ';
-y++;
+while (a <= b) {
+x += a + ' ';
+a++;
 }
 
 return console.log(x);
 	
 }
-testCycle(2,4)
+testCycle(6,24)
