@@ -1,18 +1,11 @@
-function testCycle(a, b) {
+function testCycle(n) {
 	var x;
-	x = 0;
-	let y = 0;
-	if (a<b) {
-			for(let i = a;i<b;i++) {
-		y += Math.pow(i,2);
-		x = y + Math.pow(b,2);
-		}
-		} else { 
-			for(let i = b;i<a;i++) {
-				y += Math.pow(i,2);
-				x = y + Math.pow(a,2);
-				}
+	var y = 0;
+	x = ' ';
+	for (let i = 1; i <= n;i++) {
+	y +=(2*i-1);
+	x +=y + ' ';
 	}
 return console.log(x);
 }
-testCycle(4,9)
+testCycle(8)
