@@ -1,11 +1,11 @@
 function testCycle(n) {
 	var x;
-	var y = 0;
-	x = ' ';
-	for (let i = 1; i <= n;i++) {
-	y +=(2*i-1);
-	x +=y + ' ';
-	}
+	var y= 0;
+x = 0;
+	for (let i = 1; i < n;i++) {
+	y+=i+(i+0,5);
+	x = y+n;
+}
 return console.log(x);
 }
-testCycle(8)
+testCycle(9)
