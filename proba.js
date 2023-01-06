@@ -6,20 +6,14 @@
 //is part of the second quarter; and month 11 (November),
 is part of the fourth quarter.*/
 const quarterOf = (month) => {
-	for (i = 1, i<=month,i++) {
-		if (i < 3) {
-			return quarter + '1'
-		}
-		if (3<i<=6) {
-			return quarter + '2'
-		}
-		if (6<i<=9) {
-			return quarter + '3'
-		}
-		if (9<i<=12) {
-			return quarter + '4'
-		}
-
-	return Data.month(month)
-}}
-quarterOf(2)
+	if (month <= 3) {
+return 'is part of the ' + 1
+} else if (month <= 6) {
+return 'is part of the ' + 2
+} else if (month <= 9) {
+return 'is part of the ' + 3
+} else if (month <= 12) {
+return 'is part of the ' + 4
+}
+}
+console.log(quarterOf(10))
