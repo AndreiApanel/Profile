@@ -1,19 +1,12 @@
-/* Given a month as an integer from 1 to 12,
-// return to which quarter of the year it belongs
-// as an integer number.
-// For example: month 2 (February),
-// is part of the first quarter; month 6 (June),
-//is part of the second quarter; and month 11 (November),
-is part of the fourth quarter.*/
-const quarterOf = (month) => {
-	if (month <= 3) {
-return 'is part of the ' + 1
-} else if (month <= 6) {
-return 'is part of the ' + 2
-} else if (month <= 9) {
-return 'is part of the ' + 3
-} else if (month <= 12) {
-return 'is part of the ' + 4
-}
-}
-console.log(quarterOf(10))
+/* Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
+Unfortunately, they have now left and the code they gave you doesn't work.
+  Fix the helper function they wrote so that it works as intended (i.e. make the first character in the string "word" upper case).
+Don't worry about numbers, special characters, or non-string types being passed to the function. The string lengths will be from 1 character up to 10 characters, but will never be empty.*/
+function capitalizeWord(word) {
+if (typeof word[0-10] === 'string') {
+	word[0].toUpperCase() + word.slice(1);
+return word;
+} else { 
+return word.charAt(0).toUpperCase() + word.slice(1);
+}}
+console.log(capitalizeWord('mdsadua'))
