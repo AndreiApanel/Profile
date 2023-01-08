@@ -1,10 +1,8 @@
-//  Description
-// We need a function that can transform a string into a number.
-//What ways of achieving this do you know?
-//Note: Don't worry, all inputs will be strings, 
-//and every string is a perfectly valid representation of an integral number.
-const stringToNumber = function(str){
-let num
-return num = Number(str);
-}
-console.log(stringToNumber(-1705));
+// Given a non-negative integer n, write a function to_binary/ToBinary which returns that number in a binary format.
+function toBinary(n){
+if (Math.abs(n) > 1) {
+	return n = Number(Math.abs(n).toString(2));
+} else {
+return Number(Math.abs(n));
+}}
+console.log(toBinary(-2));
