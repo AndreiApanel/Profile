@@ -1,8 +1,10 @@
-// We need a function that can transform a number (integer) into a string.
-// What ways of achieving this do you know?
-// Examples (input --> output):
-	function numberToString(num) {
-		let str
-return str = String(num)
-	}
-console.log(numberToString(-1705));
+//  Description
+// We need a function that can transform a string into a number.
+//What ways of achieving this do you know?
+//Note: Don't worry, all inputs will be strings, 
+//and every string is a perfectly valid representation of an integral number.
+const stringToNumber = function(str){
+let num
+return num = Number(str);
+}
+console.log(stringToNumber(-1705));
