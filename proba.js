@@ -1,12 +1,13 @@
-/* Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
-Unfortunately, they have now left and the code they gave you doesn't work.
-  Fix the helper function they wrote so that it works as intended (i.e. make the first character in the string "word" upper case).
-Don't worry about numbers, special characters, or non-string types being passed to the function. The string lengths will be from 1 character up to 10 characters, but will never be empty.*/
-function capitalizeWord(word) {
-if (typeof word[0-10] === 'string') {
-	word[0].toUpperCase() + word.slice(1);
-return word;
-} else { 
-return word.charAt(0).toUpperCase() + word.slice(1);
-}}
-console.log(capitalizeWord('mdsadua'))
+/* The first century spans from the year 1 up to and including the year 100,
+ the second century - from the year 101 up to and including the year 200, etc.
+Task
+Given a year, return the century it is in.*/
+function century(year) {
+	if (year%100 === 0) {
+		return x = year/100;
+	}
+	return x = parseInt(year/100)+1;
+
+
+}
+console.log(century(1705));
