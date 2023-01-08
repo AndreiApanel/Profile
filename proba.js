@@ -1,10 +1,17 @@
 // Create a function that takes an integer as an argument 
 // and returns "Even" for even numbers or "Odd" for odd numbers.
-function even_or_odd(number) {
-	if (Math.abs(number)%2 == 0) {
-  return'Even'
-	}{
-	return 'Odd'
+function fakeBin(x){
+let y = Array.from(x);
+let c = [];
+y.forEach(arguments => {
+	if(arguments < 5) {
+	return c.push(0);
 	}
+	if (arguments>=5){
+	return c.push(1);
+	}
+	}
+	)
+	return c.join('');
 }
-console.log(even_or_odd(7));
+console.log(fakeBin('564668480227'));
