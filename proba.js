@@ -1,13 +1,8 @@
-/* The first century spans from the year 1 up to and including the year 100,
- the second century - from the year 101 up to and including the year 200, etc.
-Task
-Given a year, return the century it is in.*/
-function century(year) {
-	if (year%100 === 0) {
-		return x = year/100;
+// We need a function that can transform a number (integer) into a string.
+// What ways of achieving this do you know?
+// Examples (input --> output):
+	function numberToString(num) {
+		let str
+return str = String(num)
 	}
-	return x = parseInt(year/100)+1;
-
-
-}
-console.log(century(1705));
+console.log(numberToString(-1705));
