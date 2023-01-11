@@ -1,8 +1,6 @@
-// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
-function simpleMultiplication(number) {
-if (number % 2==0) {
-	return number*8
+// Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+function repeatStr (n, s) {
+
+return s.repeat(n)
 }
-return number*9
-}
-console.log(simpleMultiplication(4))
+console.log(repeatStr(3, "*"))
