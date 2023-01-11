@@ -1,5 +1,8 @@
-// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
-function solution(str, ending){
-return str.endsWith(ending)
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+function simpleMultiplication(number) {
+if (number % 2==0) {
+	return number*8
 }
-console.log(solution('abcde','cde'))
+return number*9
+}
+console.log(simpleMultiplication(4))
