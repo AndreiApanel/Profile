@@ -1,13 +1,8 @@
-// Determine the total number of digits in the integer (n>=0) 
-// given as input to the function. For example, 
-// 9 is a single digit, 66 has 2 digits and 128685 has 6 digits. Be careful to avoid overflows/underflows.
-
-function digits(n) {
-if (n > 0 ) {
-let i = Math.log(10) 
-return Math.floor(Math.log(n) / i) + 1}
-else {
-let x = n + 1
-return x}
+// Very simple, given an integer or a floating-point number,
+//  find its opposite.
+function opposite(number) {
+	if (Math.sign(number) == 1 || Math.sign(number) == -1) {
+	return	number * (-1)
+	} else {return number}
 }
-console.log(digits(0));
+console.log(opposite(0));
