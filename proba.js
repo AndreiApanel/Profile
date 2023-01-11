@@ -1,5 +1,5 @@
-// Simple, remove the spaces from the string, then return the resultant string.
-function noSpace(x){
-return x = x.replace(/ /g,'')
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+function solution(str, ending){
+return str.endsWith(ending)
 }
-console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'))
+console.log(solution('abcde','cde'))
