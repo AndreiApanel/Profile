@@ -1,22 +1,29 @@
-// Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
-// This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
-// This function should return a number (final grade). There are four types of final grades:
-// 100, if a grade for the exam is more than 90 or if a number of completed projects more than 10.
-// 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
-// 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
-// 0, in other cases
-function finalGrade (exam, projects) {
-	if (exam > 90 || projects > 10) {
-		return 100
-	}
-	if (75 < exam && 5 <= projects) {
-	return 90
-	}
-	if (50 < exam && 2 <= projects) {
-	return 75
-	}
-	else {
-	return 0
-	}
+// When provided with a number between 0-9, return it in words.
+// Input :: 1
+// Output :: "One".
+// If your language supports it, try using a switch statement.
+function switchItUp(number){
+switch(number) {
+case 1:
+	return "One";
+case 2:
+	return "Two"
+case 3:
+	return "Three";
+case 4:
+	return "Four";
+case 5:
+	return "Five";
+case 6:
+return "Six";
+case 7:
+return "Seven";
+case 8:
+return "Eight";
+case 9:
+return "Nine";
+case 0:
+return "Zero";
 }
-console.log(finalGrade(90, 5))
+}
+console.log(switchItUp(1))
