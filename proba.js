@@ -1,8 +1,6 @@
-// The first three stages of a sequence are shown.
-// The blocksize is a by a and a ≥ 1.
-// What is the perimeter of the nth shape in the sequence (n ≥ 1) ?
-function perimeterSequence(a,n) {
-let P;
-return P = (2*(a+a)*n);
-}
-console.log(perimeterSequence(1,3))
+// It's pretty straightforward. 
+// Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+function removeChar(str){
+return str.slice(1,-1)
+ };
+console.log(removeChar('chat'))
