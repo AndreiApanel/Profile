@@ -1,18 +1,5 @@
-function testCycle(a, b) {
-	var x;
-	x = 0;
-	let y = 0;
-	if (a<b) {
-			for(let i = a;i<b;i++) {
-		y += Math.pow(i,2);
-		x = y + Math.pow(b,2);
-		}
-		} else { 
-			for(let i = b;i<a;i++) {
-				y += Math.pow(i,2);
-				x = y + Math.pow(a,2);
-				}
+// You will be given an array of numbers which can be used using the String.fromCharCode() (JS), Tools.FromCharCode() (C#) method to convert the number to a character. It is recommended to map over the array of numbers and convert each number to the corresponding ascii character.
+var ArrowFunc = function(arr) {
+	return arr.map((arr)=> (String.fromCharCode(arr))).join('');
 	}
-return console.log(x);
-}
-testCycle(4,9)
+console.log(ArrowFunc([84,101,115,116]))
