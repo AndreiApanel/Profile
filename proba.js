@@ -1,5 +1,25 @@
-// You will be given an array of numbers which can be used using the String.fromCharCode() (JS), Tools.FromCharCode() (C#) method to convert the number to a character. It is recommended to map over the array of numbers and convert each number to the corresponding ascii character.
-var ArrowFunc = function(arr) {
-	return arr.map((arr)=> (String.fromCharCode(arr))).join('');
+// Create a function strCount (takes an object as argument) that will count all string values inside an object.
+function strCount(obj) {
+	let x = 0;
+	function count(object) {
+		for (let key in object) {
+			if (typeof object[key] === 'object') {
+				count(object[key]);
+			} else {
+				if (typeof object[key] === 'string') {
+					x++;
+				}
+			}
+		}
 	}
-console.log(ArrowFunc([84,101,115,116]))
+	count(obj);
+	return x;
+}
+
+console.log(strCount({
+	first: "1",
+	second: "2",
+	third: false,
+	fourth: ["anytime", 2, 3, 4],
+	fifth: null
+}));
