@@ -1,32 +1,43 @@
-// In this kata you have to implement a base converter, which converts positive integers between arbitrary bases / alphabets.
-// The function convert() should take an input (string), the source alphabet (string) and the target alphabet (string). You can assume that the input value always consists of characters from the source alphabet. You don't need to validate it.
-function convert(input, source, target) {
-	let result = '';
-	let a = length(source);
-	let b = length(target);
-	let x = 0;
-	var Alphabet = {
-		BINARY: '01',
-		OCTAL: '01234567',
-		DECIMAL: '0123456789',
-		HEXA_DECIMAL: '0123456789abcdef',
-		ALPHA_LOWER: 'abcdefghijklmnopqrstuvwxyz',
-		ALPHA_UPPER: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-		ALPHA: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-		ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-	};
-for (let key in input) {
-	x *= a;
-	x += source.index(key)
-} 
-while (x !=0) {
-	key = target[x%b];
-	x = x/b
-	result = key+result;
-}
-	return result
+function hello() {
+	console.log('hello', this);
 }
 
+const person = {
+	name: 'John',
+	age: 25,
+	sayHello: hello,
+	sayHelloWindow: hello.bind( ),
+	logInfo: function(job, phone) {
+		console.group(`${this.name} info:`)
+		console.log(`Name is ${this.name}`);
+		console.log(`age is ${this.age}`);
+		console.log(`Job is ${job}`);
+		console.log(`Phone is ${phone}`);
+		console.groupEnd();
+	}
+}
+const lena = {
+	name: 'Lena',
+	age: 25,
+}
+// person.logInfo.call(lena,'frontend','80-9-09-9-90')
+// person.logInfo.bind(lena,'frontend','80-9-09-9-90')();
 
+// person.logInfo.apply(lena, ['frontend','80-9-09-9-90'])
 
-console.log(convert("0", Alphabet.DECIMAL, Alphabet.ALPHA));
+const array = [1,2,3,4,5]
+
+// function multBy (arr,n) {
+// 	return arr.map(function (i) {
+// 		return i * n
+// 	});
+// }
+// console.log(multBy(array,5))
+
+Array.prototype.multBy = function (n) {
+	return this.map(function (i) {
+		return i * n
+	});
+}
+
+console.log(array.multBy(2))
