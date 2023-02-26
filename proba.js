@@ -1,24 +1,22 @@
-// Your task is to add a new property users Answer to every object in the array questions. The value of usersAnswer should be set to null. The solution should work for array of any length.
-function colourAssociation(array) {
-  let result = [];
-  for (let index = 0; index < array.length; index++) {
-    result[index] = { [array[index][0]]: array[index][1] };
+// Your task is to write a function that takes two or more objects and returns a new object which combines all the input objects.
+
+// All input object properties will have only numeric values. Objects are combined together so that the values of matching keys are added together.
+function combine() {
+  let object = {};
+  let x = arguments.length;
+  for (let i = 0; i < x; i++) {
+    for (let key in arguments[i]) {
+      if (!object[key]) {
+        object[key] = arguments[i][key];
+      } else {
+        object[key] += arguments[i][key];
+      }
+    }
   }
-
-  return result;
+  return object;
 }
-
-console.log(
-  colourAssociation([
-    ["yellow", "flexible"],
-    ["blue", "humerous"],
-    ["orange", "lazy"],
-    ["pink", "dramatic"],
-    ["blue", "mystical"],
-    ["yellow", "angry"],
-    ["pink", "dramatic"],
-    ["white", "humerous"],
-    ["red", "lazy"],
-    ["white", "mystical"],
-  ])
-);
+const objC = { a: 5, d: 11, e: 8 };
+const objD = { c: 3 };
+const objA = { a: 10, b: 20, c: 30 };
+const objB = { a: 3, c: 6, d: 3 };
+console.log(combine(objA, objB));
