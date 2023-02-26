@@ -1,11 +1,11 @@
-// Task
-// Given an array of integers , Find the minimum sum which is obtained from summing each Two integers product .
+// vowelOne
+// Write a function that takes a string and outputs a strings of 1's and 0's where vowels become 1's and non-vowels become 0's.
 
-function minSum(arr) {
-  arr = arr.slice().sort((a, b) => a - b);
-  let sum = 0;
-  while (arr.length) {
-    sum += arr.shift() * arr.pop();
-  }
-  return sum;
+// All non-vowels including non alpha characters (spaces,commas etc.) should be included.
+
+function vowelOne(s) {
+  return s
+    .split("")
+    .map((x) => ("aeiouAEIOU".includes(x) ? 1 : 0))
+    .join("");
 }
