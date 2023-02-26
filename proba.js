@@ -1,43 +1,26 @@
-function hello() {
-	console.log('hello', this);
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
+
+function likes(names) {
+  const map = new Map([
+    [0, "no one likes this"],
+    [1, "{name} likes this"],
+    [2, "{name} and {name} like this"],
+    [3, "{name}, {name} and {name} like this"],
+    [4, "{name}, {name} and {n} others like this"],
+  ]);
+
+  return map
+    .get(names.length < 4 ? names.length : 4)
+    .replace(/{name}|{n}/g, (val) =>
+      val === "{name}" ? names.shift() : names.length
+    );
 }
-
-const person = {
-	name: 'John',
-	age: 25,
-	sayHello: hello,
-	sayHelloWindow: hello.bind( ),
-	logInfo: function(job, phone) {
-		console.group(`${this.name} info:`)
-		console.log(`Name is ${this.name}`);
-		console.log(`age is ${this.age}`);
-		console.log(`Job is ${job}`);
-		console.log(`Phone is ${phone}`);
-		console.groupEnd();
-	}
-}
-const lena = {
-	name: 'Lena',
-	age: 25,
-}
-// person.logInfo.call(lena,'frontend','80-9-09-9-90')
-// person.logInfo.bind(lena,'frontend','80-9-09-9-90')();
-
-// person.logInfo.apply(lena, ['frontend','80-9-09-9-90'])
-
-const array = [1,2,3,4,5]
-
-// function multBy (arr,n) {
-// 	return arr.map(function (i) {
-// 		return i * n
-// 	});
-// }
-// console.log(multBy(array,5))
-
-Array.prototype.multBy = function (n) {
-	return this.map(function (i) {
-		return i * n
-	});
-}
-
-console.log(array.multBy(2))
