@@ -1,39 +1,25 @@
 /*
 Description:
-Task
-Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
-
-Notes :
-Array/list size is at least 3 .
-
-Array/list numbers could be a mixture of positives , negatives and zeros .
-
-Repeatition of numbers in the array/list could occur , So (duplications are not included when summing).
-
-Input >> Output Examples
-1- maxTriSum ({3,2,6,8,2,3}) ==> return (17)
-Explanation:
-As the triplet that maximize the sum {6,8,3} in order , their sum is (17)
-
-Note : duplications are not included when summing , (i.e) the numbers added only once .
-
-2- maxTriSum ({2,1,8,0,6,4,8,6,2,4}) ==> return (18)
-Explanation:
-As the triplet that maximize the sum {8, 6, 4} in order , their sum is (18) ,
-Note : duplications are not included when summing , (i.e) the numbers added only once .
-3- maxTriSum ({-7,12,-7,29,-5,0,-7,0,0,29}) ==> return (41)
-Explanation:
-As the triplet that maximize the sum {12 , 29 , 0} in order , their sum is (41) ,
-Note : duplications are not included when summing , (i.e) the numbers added only once .
-Playing with Numbers Series
-Playing With Lists/Arrays Series
-For More Enjoyable Katas
-ALL translations are welcomed
-Enjoy Learning !!
-Zizou
+Nickname Generator
+Write a function, nicknameGenerator that takes a string name as an argument and returns the first 3 or 4 letters as a nickname.
+If the 3rd letter is a consonant, return the first 3 letters.
+nickname("Robert") //=> "Rob"
+nickname("Kimberly") //=> "Kim"
+nickname("Samantha") //=> "Sam"
+If the 3rd letter is a vowel, return the first 4 letters.
+nickname("Jeannie") //=> "Jean"
+nickname("Douglas") //=> "Doug"
+nickname("Gregory") //=> "Greg"
+If the string is less than 4 characters, return "Error: Name too short".
+Notes:
+Vowels are "aeiou", so discount the letter "y".
+Input will always be a string.
+Input will always have the first letter capitalised and the rest lowercase (e.g. Sam).
+The input can be modified
 */
 
-function maxTriSum(numbers) {
-  const sorted = [...new Set(numbers.sort((a, b) => b - a))];
-  return sorted[0] + sorted[1] + sorted[2];
+function nicknameGenerator(name) {
+  if (name.length < 4) return "Error: Name too short";
+  if (name[2].match(/[aeuio]/)) return name.slice(0, 4);
+  return name.slice(0, 3);
 }
