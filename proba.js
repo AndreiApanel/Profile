@@ -1,22 +1,15 @@
-// Your task is to write a function that takes two or more objects and returns a new object which combines all the input objects.
+// Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer.
 
-// All input object properties will have only numeric values. Objects are combined together so that the values of matching keys are added together.
-function combine() {
-  let object = {};
-  let x = arguments.length;
-  for (let i = 0; i < x; i++) {
-    for (let key in arguments[i]) {
-      if (!object[key]) {
-        object[key] = arguments[i][key];
-      } else {
-        object[key] += arguments[i][key];
-      }
-    }
+// Square all numbers k (0 <= k <= n) between 0 and n.
+
+// Count the numbers of digits d used in the writing of all the k**2.
+
+// Call nb_dig (or nbDig or ...) the function taking n and d as parameters and returning this count.
+function nbDig(n, d) {
+  var res = 0;
+  for (var g = 0; g <= n; g++) {
+    var square = (g * g + "").split("");
+    square.forEach((s) => (s == d ? res++ : null));
   }
-  return object;
+  return res;
 }
-const objC = { a: 5, d: 11, e: 8 };
-const objD = { c: 3 };
-const objA = { a: 10, b: 20, c: 30 };
-const objB = { a: 3, c: 6, d: 3 };
-console.log(combine(objA, objB));
