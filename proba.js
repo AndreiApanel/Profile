@@ -1,35 +1,22 @@
-const delay = (ms) => {
-  return new Promise((r) => setTimeout(() => r(), ms));
-};
+function towelSort(matrix) {
+  matrix = typeof matrix !== "undefined" ? matrix : [];
 
-delay(2000).then(() => console.log("2 sec"));
+  // let a1 = [].concat(matrix[1].sort((a, b) => a - b).reverse());
+  // let b3 = [].concat(matrix[3].sort((a, b) => a - b).reverse());
+  // const sorted = [].concat(...matrix);
+  //   let sorted = matrix[1].sort((a, b) => a - b).reverse();
+  // let sorted = [];
 
-const url = "https://jsonplaceholder.typicode.com/todos";
-
-// function fetchTodos() {
-//   console.log("Fetch todo started...");
-
-//   return delay(2000)
-//     .then(() => fetch(url))
-//     .then((response) => response.json());
-// }
-// fetchTodos()
-//   .then((data) => {
-//     console.log("Data:", data);
-//   })
-//   .catch((e) => console.error(e));
-
-async function fetchAsyncTodos() {
-  console.log("Fetch todo started...");
-  try {
-    await delay(2000);
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log("Data:", data);
-  } catch (e) {
-    console.error(e);
-  } finally {
-  }
+  matrix.forEach((_, index) => {
+    if (index % 2 !== 0) {
+      matrix[index].sort((a, b) => a - b).reverse();
+    } else if (index.length == 0) {
+      matrix;
+    }
+  });
+  const result = [].concat(...matrix);
+  return result;
 }
 
-fetchAsyncTodos();
+const matrix = [];
+console.log(towelSort(matrix));
